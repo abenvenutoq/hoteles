@@ -1,7 +1,5 @@
-package com.duocuc.hoteles;
-
-import java.util.List;
-
+    package com.duocuc.hoteles;
+ 
 
 public class Huesped{
 
@@ -9,7 +7,7 @@ public class Huesped{
     private String nombre;
     private String apellido;
 
-    private Huesped (String rut, String nombre, String apellido){
+    public Huesped (String rut, String nombre, String apellido){
 
         this.rut = rut;
         this.nombre = nombre;
@@ -20,6 +18,7 @@ public class Huesped{
     //GET
 
     public String getRut(){
+
         return rut;
     }
 

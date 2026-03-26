@@ -1,31 +1,33 @@
 package com.duocuc.hoteles;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
 
+
+@JsonPropertyOrder({"codReserva", "huesped", "habitacion", "fechaIngreso", "fechaSalida"})
 public class Reserva{
 
     private int codReserva;
-    private Date fechaIngreso;
-    private Date fechaSalida;
+    private String fechaIngreso;
+    private String fechaSalida;
     private List<Huesped> huesped;
     private List<Habitacion> habitacion;
 
 
-    public Reserva (int codReserva, Date fechaIngreso, Date fecehaSalida, List<Huesped> huesped, List<Habitacion> habitacion){
+    public Reserva (int codReserva, String fechaIngreso, String fechaSalida, List<Huesped> huesped, List<Habitacion> habitacion){
 
         this.codReserva = codReserva;
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
-        this.Huesped = huesped;
         this.huesped = huesped;
         this.habitacion = habitacion;
 
 
     }
 
-    public String getCodigoReserva(){
+    public Integer getCodReserva(){
 
-        return codigoReserva;
+        return codReserva;
 
     }
 
@@ -41,13 +43,13 @@ public class Reserva{
 
     }
 
-    public List<Huesped> huesped(){
+    public List<Huesped> getHuesped(){
 
         return huesped;
 
     }
 
-    public List<Habitacion> habitacion(){
+    public List<Habitacion> getHabitacion(){
 
         return habitacion;
 
