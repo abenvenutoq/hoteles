@@ -15,11 +15,11 @@ public class ReservaController{
 
     private List<Reserva> reservas = new ArrayList<>();
 
-
-    // Formato de hoy para fechaIngreso y fechaSalida, para poder obtener valores al consultar endpoints ingresos_hoy y salidas_hoy
+    // Formato de hoy para fechaIngreso y fechaSalida, para poder obtener valores al consultar solicitudes ingresos_hoy y salidas_hoy
+    // fechaString se utiliza para agregar algunos datos de fechas del día en curso en memoria.
     LocalDate ld = LocalDate.now();
     DateTimeFormatter ff = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    String fechaString = ld.format(ff); // fechaString se utiliza para agregar algunos datos de fechas en memoria.
+    String fechaString = ld.format(ff);
 
     public ReservaController(){
 
@@ -75,105 +75,67 @@ public class ReservaController{
 
     }
 
-    // Endpint para mostras todas las reservas
+    // MUESTRA TODAS LAS RESERVAS
     @GetMapping("/reservas")
     public List<Reserva> obtenerTodasLasReservas() {
         return reservas;
     }
 
-    // Endpoint para buscar reservas por Rut
+    // MUESTRA DETALLE RESERVA DE CLIENTES POR RUT
     @GetMapping("/rut/{rut}")
     public List<Reserva> buscarRutReserva(@PathVariable String rut) {
-
         List<Reserva> reservaEncontrada = new ArrayList<>();
-
         for (Reserva reserva : reservas) {
-
             for(Huesped huesped : reserva.getHuesped()){
-
                 if (huesped.getRut().equals(rut)) {
-                    
                     reservaEncontrada.add(reserva);
-
                     break;
-
                 }
              }
-
         }
-    
         return reservaEncontrada;
     }
 
-    // Endpoint para buscar reserva por codigo de reserva
+    // MUESTRA DETALLE DE RESERVA POR CODIGO DE RESERVA
     @GetMapping("/reserva/{codReserva}")
     public List<Reserva> getCodReserva(@PathVariable int codReserva){
-
         List<Reserva> reservaEncontrada = new ArrayList<>();
-
         for (Reserva reserva : reservas){
-
             if(reserva.getCodReserva() == codReserva) {
-
                 reservaEncontrada.add(reserva);
-
                 break;
-
-            }
-            
+            }           
         }
         return reservaEncontrada;
     }
 
-    // Endpoint para mostrar las reservas que inician hoy
+    // MUESTRA DETALLE DE RESERVAS QUE INGRESAN HOY
     @GetMapping("/ingresos_hoy")
     public List<Reserva> getReservasHoy(){
-
         LocalDate fechaLocal = LocalDate.now();
-
         DateTimeFormatter fechaFormato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
         String fechaIngreso = fechaLocal.format(fechaFormato);
-
         List<Reserva> reservaEncontrada = new ArrayList<>();
-
         for (Reserva reserva : reservas){
-
             if(reserva.getFechaIngreso().equals(fechaIngreso)) {
-
                 reservaEncontrada.add(reserva);
-
             }
-            
         }
         return reservaEncontrada;
-
     }
 
-    // Endpoint para mostrar las reservas que inician hoy
+    // MUESTRA DETALLE DE RESERVAS QUE TERMINAN HOY
     @GetMapping("/salidas_hoy")
     public List<Reserva> getSalidasHoy(){
-
         LocalDate fechaLocal = LocalDate.now();
-
         DateTimeFormatter fechaFormato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
         String fechaIngreso = fechaLocal.format(fechaFormato);
-
         List<Reserva> reservaEncontrada = new ArrayList<>();
-
         for (Reserva reserva : reservas){
-
             if(reserva.getFechaSalida().equals(fechaIngreso)) {
-
                 reservaEncontrada.add(reserva);
-
             }
-            
         }
         return reservaEncontrada;
-
     }
-
-
 }
