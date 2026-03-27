@@ -28,47 +28,47 @@ public class ReservaController{
                         Arrays.asList(new Habitacion(101, 1)))
         );
 
-        reservas.add(new Reserva (1, "10-03-2026", fechaString,
+        reservas.add(new Reserva (2, "10-03-2026", fechaString,
                         Arrays.asList(new Huesped("12767373-4", "Romina", "Rolanini")),
                         Arrays.asList(new Habitacion(101, 1)))
         );
 
-        reservas.add(new Reserva (1, "27-03-2026", "30-03-2026",
+        reservas.add(new Reserva (3, "27-03-2026", "30-03-2026",
                         Arrays.asList(new Huesped("15940700-4", "Angelo", "Benvenuto")),
                         Arrays.asList(new Habitacion(101, 1)))
         );
 
-        reservas.add(new Reserva (2, "30-03-2026", "05-04-2026",
+        reservas.add(new Reserva (4, "30-03-2026", "05-04-2026",
                         Arrays.asList(new Huesped("9843565-4", "Maria", "Quilobran")),
                         Arrays.asList(new Habitacion(305, 3)))
         );
 
-        reservas.add(new Reserva (3, "31-03-2026", "15-04-2026",
+        reservas.add(new Reserva (5, "31-03-2026", "15-04-2026",
                         Arrays.asList(new Huesped("19699633-0", "Josseline", "Molina")),
                         Arrays.asList(new Habitacion(673, 6)))
         );
 
-        reservas.add(new Reserva (4, "30-03-2026", "01-04-2026",
+        reservas.add(new Reserva (6, "30-03-2026", "01-04-2026",
                         Arrays.asList(new Huesped("8560050-8", "Miguel", "Molina")),
                         Arrays.asList(new Habitacion(484, 4)))
         );
 
-        reservas.add(new Reserva (5, "04-04-2026", "24-04-2026",
+        reservas.add(new Reserva (7, "04-04-2026", "24-04-2026",
                         Arrays.asList(new Huesped("15940700-4", "Angelo", "Benvenuto")),
                         Arrays.asList(new Habitacion(222, 2)))
         );
 
-        reservas.add(new Reserva (6, fechaString, "05-05-2026",
+        reservas.add(new Reserva (8, fechaString, "05-05-2026",
                         Arrays.asList(new Huesped("11940722-4", "Carolina", "Pineda")),
                         Arrays.asList(new Habitacion(222, 2)))
         );
 
-        reservas.add(new Reserva (7, fechaString, "30-06-2026",
+        reservas.add(new Reserva (9, fechaString, "30-06-2026",
                         Arrays.asList(new Huesped("19940774-4", "Sandra", "Martelli")),
                         Arrays.asList(new Habitacion(222, 2)))
         );
 
-        reservas.add(new Reserva (8, fechaString, "05-04-2026",
+        reservas.add(new Reserva (10, fechaString, "05-04-2026",
                         Arrays.asList(new Huesped("7768892-7", "Claudia", "Abarca")),
                         Arrays.asList(new Habitacion(222, 2)))
         );
